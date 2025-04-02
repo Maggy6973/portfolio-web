@@ -1,0 +1,172 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%; 
+    height: 100%;
+    object-fit: cover; 
+    z-index: -1; 
+    opacity: 0.8; 
+}
+
+.book-container {
+    position: relative;
+    width: 80%;
+    height: 70%;
+    perspective: 1000px;
+    overflow: hidden;
+}
+
+.page {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    backface-visibility: hidden;
+    transform-origin: right;
+    transform: rotateY(0deg);
+    transition: transform 0.8s ease-in-out;
+
+}
+.page:nth-child(1){
+   background-color: beige;
+   background-image: url(https://static.vecteezy.com/system/resources/thumbnails/003/770/741/small_2x/colorful-abstract-background-with-circles-and-stars-bright-design-simple-flat-illustration-vector.jpg);
+}
+
+.page:nth-child(2) {
+    transform: rotateY(180deg);
+    background-color: #735daf;
+    background-image:url(https://th.bing.com/th/id/OIP.GE3nyyyEeKPg55t9WwnvoQHaH0?w=175&h=184&c=7&r=0&o=5&pid=1.7) ;
+}
+
+.page:nth-child(3) {
+    transform: rotateY(180deg);
+    background-color: #735daf;
+    background-image:url(https://th.bing.com/th/id/OIP.aRoJEh2wtgj21lMu1C_0FAHaHa?w=1920&h=1920&rs=1&pid=ImgDetMain) ;
+}
+
+.page:nth-child(4) {
+    transform: rotateY(180deg);
+    background-color: #735daf;
+    background-image:url(https://th.bing.com/th/id/OIP.c5VgrR0gU0xtXfr8aaoitgHaEK?w=326&h=183&c=7&r=0&o=5&pid=1.7) ;
+}
+
+.page:nth-child(5) {
+    transform: rotateY(180deg);
+    background-color: #735daf;
+    background-image:url(https://th.bing.com/th/id/OIP.Ywef8wYGHCSDBAfuIno9xwHaF_?rs=1&pid=ImgDetMain) ;
+}
+
+.page:nth-child(6) {
+    transform: rotateY(180deg);
+   background-color: #189638;
+    background-image: url(https://img.freepik.com/premium-vector/pink-green-floral-border-with-flowers-leaves_664601-2343.jpg);
+    background-position: cover;
+}
+
+button {
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: #35424a;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color:red;
+}
+
+.link{
+    font-weight: 900; 
+    font-size: 1.2em; 
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 10ox 0;
+}  
+ 
+.scrollable-content {
+    max-height: 300px; 
+    overflow-y: auto; 
+    padding: 10px; 
+    background-color: #dbc5c5; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: block;
+    background-image: url(https://thumbs.dreamstime.com/z/golden-stars-glitter-pink-background-festive-holiday-pastel-backdrop-golden-stars-glitter-pink-background-105326493.jpg);
+}
+
+.scrollable-content::-webkit-scrollbar {
+    width: 8px; 
+}
+
+.scrollable-content::-webkit-scrollbar-thumb {
+    background-color: #2b078f; 
+    border-radius: 10px;
+}
+
+.scrollable-content::-webkit-scrollbar-track {
+    background-color: #a10a0a; 
+}
+
+.cube {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    transform-style: preserve-3d;
+    transform: rotateX(-30deg) rotateY(30deg);
+    animation: rotateCube 5s infinite linear;
+    right: 300px;
+  }
+  
+  .face {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: rgba(0, 0, 255, 0.8);
+    border: 2px solid #fff;
+  }
+  
+  .front  { transform: translateZ(75px); background-color: rgba(255, 0, 0, 0.8); }
+  .back   { transform: rotateY(180deg) translateZ(75px); background-color: rgba(0, 255, 0, 0.8); }
+  .left   { transform: rotateY(-90deg) translateZ(75px); background-color: rgba(0, 0, 255, 0.8); }
+  .right  { transform: rotateY(90deg) translateZ(75px); background-color: rgba(255, 255, 0, 0.8); }
+  .top    { transform: rotateX(90deg) translateZ(75px); background-color: rgba(255, 0, 255, 0.8); }
+  .bottom { transform: rotateX(-90deg) translateZ(75px); background-color: rgba(0, 255, 255, 0.8); }
+  
+  @keyframes rotateCube {
+    from {
+      transform: rotateX(-30deg) rotateY(30deg);
+    }
+    to {
+      transform: rotateX(-30deg) rotateY(390deg);
+    }
+  }
+  
+  .cube:hover {
+    animation-play-state: paused;
+    transform: rotateX(30deg) rotateY(30deg);
+  }
+  
